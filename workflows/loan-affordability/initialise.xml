@@ -17,6 +17,4 @@
     <set-field field="pmt.payments-per-year" value="12" /><!-- Default to monthly payments -->
     <set-field field="pmt.years" value="2" /><!-- Default to 2 year term -->
     <set-field field="pmt.interest" value="{$parameters.interest-rate:20}" /><!-- set the interest rate : default to 20% -->
-    
-    <debug  dataset="parameters"/>
 </do>
