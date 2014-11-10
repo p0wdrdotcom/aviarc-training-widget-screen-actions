@@ -1,0 +1,11 @@
+<instance>
+   <application name="quick-loan-calculator"/>
+   <authority/>
+   <authorizer/>
+   <name>quick-loan-calculator</name>
+   <theme>default</theme>
+   <url>quick-loan-calculator</url>
+   <enabled>true</enabled>
+   <variables>
+   </variables>
+</instance>

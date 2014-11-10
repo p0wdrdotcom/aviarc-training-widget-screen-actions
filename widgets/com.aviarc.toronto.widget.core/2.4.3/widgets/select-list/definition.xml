@@ -1,0 +1,35 @@
+<widget name="select-list" 
+        factory-class="com.aviarc.framework.toronto.widget.DefaultWidgetProviderFactoryImpl"
+        container-positioning="y">
+<!--     element-validator-class="com.aviarc.toronto.widget.core.validation.SelectListElementValidator" -->
+
+    <attributes>
+        <attribute name="name" type="name" mandatory="n"/>
+        <attribute name="selection-field" mandatory="n" type="field"/>
+        <attribute name="dataset" mandatory="y" type="dataset"/>
+        <attribute name="id-field" mandatory="y" />
+        <attribute name="display-field" mandatory="y" />
+        <attribute name="null-option-text" mandatory="n"/>
+        <attribute name="select-row" mandatory="n" type="bool" default="n"/>
+        <attribute name="multi-line" mandatory="n" type="bool" default="n"/>
+        <attribute name="mandatory" mandatory="n" default="n" type="bool"/>
+        <attribute name="action" mandatory="n" type="action"/>
+        <attribute name="enabled" mandatory="n" type="bool" default="y"/>
+        <attribute name="validate" mandatory="n" type="bool" default="n"/>
+        <attribute name="auto-refresh" mandatory="n" type="bool" default="y"/>
+        <attribute name="height" mandatory="n" type="integer" default="20" />
+    </attributes>
+
+    <includes>
+      <js-include type="namespace" file="jquery-1.9.1.min.js"/>
+      <js-include type="namespace" file="underscore-min.js"/>
+      <js-include type="namespace" file="jquery.mCustomScrollbar.min.js"/>
+      <js-include file="Selectyze.jquery.js"/>
+      <js-include file="SelectList.js"/>
+      <css-include file="select-list.css"/>
+      <msie6-css-include file="ie6-select-list.css"/>
+    </includes>
+
+    <js-constructor>new YAHOO.com.aviarc.framework.toronto.widget.core.v2_4_3.SelectList()</js-constructor>
+
+</widget>

@@ -1,0 +1,10 @@
+<do xmlns:math="urn:aviarc:xmlcommand:com.aviarc.math" xmlns:string="urn:aviarc:xmlcommand:com.aviarc.string">
+    <if>
+        <string:matches regex="^([1-9]|[1-9][0-9])\.?([0-9]|[1-9][0-9])?$" value="{@interest-rate-input}" />
+        <then>
+            <set-field field="{@result-field}">
+                <math:double value="{@interest-rate-input}" />
+            </set-field>
+        </then>
+    </if>
+</do>

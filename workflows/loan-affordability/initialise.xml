@@ -1,0 +1,22 @@
+<do xmlns:support="urn:aviarc:xmlcommand:support">
+    <dataset name="working" />
+    <create-row dataset="working"/>
+    <dataset name="pmt" />
+    <create-row dataset="pmt"/>
+    <support:bind-rules dataset="pmt">
+        <support:rule name="currency">
+            <support:attribute name="source-field" value="payment"/>
+        </support:rule>
+        <support:rule name="currency">
+            <support:attribute name="source-field" value="principal"/>
+        </support:rule>
+    </support:bind-rules>
+    
+    <dataset name="months" databroker="months" query="get-months-selection-list" />
+    <!-- set the defualts -->
+    <set-field field="pmt.payments-per-year" value="12" /><!-- Default to monthly payments -->
+    <set-field field="pmt.years" value="2" /><!-- Default to 2 year term -->
+    <set-field field="pmt.interest" value="{$parameters.interest-rate:20}" /><!-- set the interest rate : default to 20% -->
+    
+    <debug  dataset="parameters"/>
+</do>

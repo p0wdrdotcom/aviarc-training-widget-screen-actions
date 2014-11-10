@@ -1,0 +1,14 @@
+<widget name="add" 
+        factory-class="com.aviarc.framework.toronto.widget.DefaultWidgetProviderFactoryImpl"
+        action="y">        
+    <attributes>       
+        <attribute name="name" type="name" mandatory="n" /> 
+    </attributes>
+    <children allowed="y"/>
+    <includes>
+        <js-include type="namespace" file="MathContext.js"/>
+        <js-include type="namespace" file="BigDecimal.js"/>
+        <js-include file="Add.js"/>
+    </includes>
+    <js-constructor>new YAHOO.com.aviarc.toronto.widget.core.action.math.v1_0_0.Add()</js-constructor>
+</widget>

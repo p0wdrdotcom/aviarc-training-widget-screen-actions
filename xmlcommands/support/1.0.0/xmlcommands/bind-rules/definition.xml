@@ -1,0 +1,26 @@
+<xml-command name="bind-rules" classname="qmuportal.xmlcommands.bindrules.BindRules">
+    <attributes>
+        <attribute name="dataset" mandatory="y" />
+        <attribute name="rules-file" mandatory="n" />
+        <attribute name="rules-urn" mandatory="n" />
+        <attribute name="rules-dataset" mandatory="n" />
+    </attributes>
+    <sub-elements>
+        <sub-element name="rule" mandatory="n" singleton="n">
+            <attributes>
+                <attribute name="name" type="string" runtime="y" mandatory="y" />
+            </attributes>
+            <sub-elements>
+                <sub-element name="attribute" mandatory="n" singleton="n">
+                    <attributes>
+                        <attribute name="name" type="string" runtime="y" mandatory="y" />
+                        <attribute name="value" type="string" runtime="y" mandatory="y" />
+                    </attributes>
+                    <child-commands allowed="n" />
+                </sub-element>
+            </sub-elements>
+            <child-commands allowed="y" />
+        </sub-element>
+    </sub-elements>
+    <child-commands allowed="y" />
+</xml-command>

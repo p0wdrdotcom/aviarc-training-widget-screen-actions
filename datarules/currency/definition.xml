@@ -1,0 +1,8 @@
+<data-rule
+        name="currency"
+        factory-class="com.aviarc.framework.datarule.xml.DefaultXMLDataRuleProviderFactoryImpl"
+        datarule-class="com.blacha.CurrencyDataRule">
+    <parameters>
+        <parameter name="source-field" mandatory="y" type="string" />
+    </parameters>   
+</data-rule>

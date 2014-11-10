@@ -1,0 +1,29 @@
+.$URN$_radio-select-list {
+    position: absolute;
+}
+.$URN$_radio-select-list select {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    -webkit-appearance: none;
+}
+
+/* mandatory */
+.$URN$_radio-select-list .select-list-mandatory {
+    display:none;
+    text-indent:-9999px;
+} 
+.$URN$_radio-select-list-mandatory select {
+    border-width:2px;
+    border-color:#dc8585;
+}
+
+/*** ---------------- Custom Classes Begin ---------------------------------------------------------------- ***/
+
+/* "disabled" */
+.$URN$_radio-select-list-disabled select {
+    background:#ddd;
+    border-color:#777;
+}

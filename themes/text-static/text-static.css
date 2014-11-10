@@ -1,0 +1,184 @@
+/* text-static base classes */
+.$URN$_text-static {
+    font: normal normal 12px/1.2em Arial, Helvetica, sans-serif;
+    color:#000;
+}
+.$URN$_text-static-disabled {
+    color:#999;
+}
+
+/*** ---------------- Custom Classes Begin ---------------------------------------------------------------- ***/
+.$URN$_text-static-bold {
+    font-weight: bold;
+}
+.$URN$_text-static-italic {
+    font-style: italic;
+}
+.$URN$_text-static-center {
+    text-align: center;
+}
+.$URN$_text-static-underline {
+    text-decoration:underline;
+}
+.$URN$_text-static-strike-through {
+    text-decoration:line-through;
+}
+.$URN$_text-static-overline {
+    text-decoration:overline;
+}
+.$URN$_text-static-right {
+    text-align:right;
+}
+.$URN$_text-static-left {
+    text-align:left;
+}
+.$URN$_text-static-inline,
+.$URN$_text-static-block,
+.$URN$_text-static-heading {
+    position:relative !important;
+    width:auto !important;
+    height:auto !important;
+    top:auto !important;
+    bottom:auto !important;
+    left:auto !important;
+    right:auto !important;
+    line-height:1.8em;
+    padding:0;
+}
+.$URN$_text-static-inline {
+    display:inline !important;
+}
+.$URN$_text-static-block,
+.$URN$_text-static-heading {
+    display:block !important;
+}
+.$URN$_text-static-block {
+    padding:0 0 .8em 0;
+}
+.$URN$_text-static-heading,
+.$URN$_text-static-heading-font {
+    font-family: Helvetica, Arial, sans-serif;
+}
+.$URN$_text-static-heading {
+    margin-bottom:.5em;
+    padding:.3em 0 .1em 0;
+    height:1.3em;
+    border-bottom:.2em solid #ebf1f7;
+    color:#001a33;
+}
+.$URN$_text-static-heading-dark {
+    border-color:#ebf1f7;
+}
+
+/* "text-smaller" */
+.$URN$_text-static-smaller {
+    font-size: 85%;
+}
+/* "text-small" */
+.$URN$_text-static-small {
+    font-size: 95%;
+}
+/* "text-medium" */
+.$URN$_text-static-medium {
+    font-size: 105%;
+}
+/* "text-large" */
+.$URN$_text-static-large {
+    font-size: 120%;
+}
+/* "text-larger" */
+.$URN$_text-static-larger {
+    font-size: 150%;
+}
+/* "text-huge" */
+.$URN$_text-static-huge {
+    font-size: 200%;
+}
+
+/* "h1" */
+.$URN$_text-static-h1 {
+    font-size:250%;
+    font:Garamond;
+}
+/* "h2" */
+.$URN$_text-static-h2 {
+    font-size:200%;
+}
+/* "h3" */
+.$URN$_text-static-h3 {
+    font-size:165%;
+    font-weight:bold;
+}
+/* "h4" */
+.$URN$_text-static-h4 {
+    font-size:150%;
+    font-weight:bold;
+}
+/* "h5" */
+.$URN$_text-static-h5 {
+    font-size:150%;
+}
+/* "h6" */
+.$URN$_text-static-h6 {
+    font-size:120%;
+    font-weight:bold;
+}
+
+.$URN$_text-static-no-border {
+    border:0;
+}
+
+
+/* Colour classes */
+.$URN$_text-static-white {
+    color:#fff;
+}
+.$URN$_text-static-black {
+    color:#000;
+}
+.$URN$_text-static-primary {
+    color:#7A7571;
+}
+.$URN$_text-static-secondary {
+    color:#A29F9C;
+}
+.$URN$_text-static-tertiary {
+    color:#606f80;
+}
+.$URN$_text-static-light {
+    color:#ebf1f7;
+}
+.$URN$_text-static-dark {
+    color:#001a33;
+}
+.$URN$_text-static-link {
+    color:#1587f9;
+}
+.$URN$_text-static-valid {
+    color:#00b359;
+}
+.$URN$_text-static-warning {
+    color:#eb7a00;
+}
+.$URN$_text-static-error {
+    color:#e60000;
+}
+.$URN$_text-static-highlight {
+    color:#d4ffff;
+}
+.$URN$_text-static-muted {
+    color:#bbbbbb;
+}
+.$URN$_text-static-no-decoration {
+    text-decoration:none;
+}
+
+/* Autogen classes */
+.$URN$_text-static-title {
+    font-size: 14pt;
+}
+.$URN$_text-static-login-title {
+    font-size: 14pt;
+    text-align: center;
+}
+/*** ---------------- Custom Classes End ---------------------------------------------------------------- ***/

@@ -1,0 +1,7 @@
+<do>
+    <dataset name="options"/>
+    <create-row dataset="options"/>
+    <debug dataset="request-parameters"/>
+    <parse-and-set-interest-rate result-field="options.interest-rate" interest-rate-input="{$request-parameters.interestrate}" />
+    <debug dataset="options" />
+</do>

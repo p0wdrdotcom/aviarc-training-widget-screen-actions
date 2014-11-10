@@ -1,0 +1,10 @@
+<dataset>
+    <row>
+        <field name="display" value="weekly" />
+        <field name="number-per-year" value="52" />
+    </row>
+    <row>
+        <field name="display" value="monthly" />
+        <field name="number-per-year" value="12" />
+    </row>
+</dataset>

@@ -1,0 +1,6 @@
+<xml-command name="parse-and-set-interest-rate">
+    <attributes>
+        <attribute name="interest-rate-input" type="string" mandatory="true"/>
+        <attribute name="result-field" type="field" mandatory="true"/>
+    </attributes>
+</xml-command>

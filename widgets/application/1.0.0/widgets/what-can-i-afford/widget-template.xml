@@ -1,0 +1,49 @@
+<container class="{@class}" visible="{@visible}" position="{@position}" width="{@width}" height="{@height}" left="{@left}" right="{@right}" top="{@top}" bottom="{@bottom}" margin="{@margin}" margin-top="{@margin-top}" margin-bottom="{@margin-bottom}" margin-left="{@margin-left}" margin-right="{@margin-right}" padding="{@padding}" padding-top="{@padding-top}" padding-bottom="{@padding-bottom}" padding-left="{@padding-left}" padding-right="{@padding-right}" xmlns:support="urn:aviarc:widget:support" xmlns:action="urn:aviarc:widget:com.aviarc.toronto.widget.core.action">
+    <support:datacontext workflow="what-can-i-afford/initialise">
+        <support:parameters>
+            <support:param name="interest-rate" value="{@interest-rate}"/>
+        </support:parameters>
+        <container position="relative">
+            <text-static height="30" float="left" text="i can afford"/>
+            <text-edit height="30" width="100" float="left" field="pmt.payment" show-type="n"/>
+            <container width="100%" position="relative" class="clear" overflow="hidden" margin-top="-1" height="1" />
+        </container>
+        <container position="relative">
+            <text-static height="30" float="left" text="repayments over"/>
+            <select-list height="30" width="100" float="left" id-field="years" display-field="display" dataset="months" selection-field="pmt.years"/>
+            <container width="100%" position="relative" class="clear" overflow="hidden" margin-top="-1" height="1" />
+        </container>
+        <container position="relative">
+            <text-static height="30" float="left" text="payment interval"/>
+            <select-list height="30" width="100" float="left" id-field="number-per-year" display-field="display" dataset="payment-interval" selection-field="pmt.payments-per-year"/>
+            <container width="100%" position="relative" class="clear" overflow="hidden" margin-top="-1" height="1" />
+        </container>
+        <container position="relative">
+            <text-static height="30" float="left" text="interest rate"/>
+            <text-edit height="30" width="100" float="left" field="pmt.interest" show-type="n" />
+            <container width="100%" position="relative" class="clear" overflow="hidden" margin-top="-1" height="1" />
+        </container>
+        <container position="relative">
+            <text-static height="30" float="left" text="principal" margin-right="10"/>
+            <dynamic-text float="left" field="pmt.principal"/>
+            <container width="100%" position="relative" class="clear" overflow="hidden" margin-top="-1" height="1" />
+        </container>
+        <action:when>
+            <action:events>
+                <action:dataset-current-row-field-changed-event field="pmt.interest" />
+                <action:dataset-current-row-field-changed-event field="pmt.payment" />
+                <action:dataset-current-row-field-changed-event field="pmt.years" />
+                <action:dataset-current-row-field-changed-event field="pmt.payments-per-year" />
+            </action:events>
+            <action:do>
+                <action:set-field field="pmt.principal">
+                    <calculate-principal 
+                        payment="{$pmt.payment}" 
+                        interest="{$pmt.interest}" 
+                        payments-per-year="{$pmt.payments-per-year}"
+                        years="{$pmt.years}" />
+                </action:set-field>
+            </action:do>
+        </action:when>
+    </support:datacontext>
+</container>

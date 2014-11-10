@@ -1,0 +1,14 @@
+<widget name="round" 
+		factory-class="com.aviarc.framework.toronto.widget.DefaultWidgetProviderFactoryImpl"
+		action="y">		
+    <attributes>       
+        <attribute name="name" type="name" mandatory="n" />
+        <attribute name="type" type="string" mandatory="y"/>
+        <attribute name="precision" type="string" mandatory="y"/>
+    </attributes>
+    <children allowed="y"/>
+	<includes>
+        <js-include file="Round.js"/>
+    </includes>
+    <js-constructor>new YAHOO.com.aviarc.toronto.widget.core.action.math.v1_0_0.Round()</js-constructor>
+</widget>

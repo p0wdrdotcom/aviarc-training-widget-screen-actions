@@ -1,0 +1,3 @@
+.$URN$_select-list select {
+    height: expression(this.parentElement.offsetHeight);
+}

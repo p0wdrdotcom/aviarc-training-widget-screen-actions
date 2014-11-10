@@ -1,0 +1,26 @@
+.$URN$_container-clear {clear:both;}
+
+.$URN$_container-center {
+    position:relative !important;
+    margin:0 auto;
+}
+.$URN$_container-block {
+    display:block;
+    position:relative !important;
+}
+.$URN$_container-white {
+    background-color:#FFFFFF;
+}
+.$URN$_container-secondary {
+    background-color:#A29F9C;
+}
+.$URN$_container-light {
+    background-color:#EEEEEE;
+}
+.$URN$_container-grey {
+    background-color:#CACACA;
+}
+.$URN$_container-border {
+    border: solid 1px #CACACA;
+    border-radius:10px;
+}

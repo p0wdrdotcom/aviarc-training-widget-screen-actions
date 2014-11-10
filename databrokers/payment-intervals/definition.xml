@@ -1,0 +1,5 @@
+<databroker datarules="rules.xml" factory-class="com.aviarc.framework.databroker.datasetfile.DatasetFileDataBrokerFactoryImpl">
+    <populate-operation name="get-all">
+          <dataset-result file="get-all.xml"/>
+    </populate-operation>
+</databroker>

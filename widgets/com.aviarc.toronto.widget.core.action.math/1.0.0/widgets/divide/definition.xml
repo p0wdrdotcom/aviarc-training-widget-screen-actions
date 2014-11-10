@@ -1,0 +1,13 @@
+<widget name="divide" 
+        factory-class="com.aviarc.framework.toronto.widget.DefaultWidgetProviderFactoryImpl"
+        action="y">        
+    <attributes>       
+        <attribute name="value1" mandatory="n" />
+        <attribute name="value2" mandatory="n" />
+    </attributes>
+    <children allowed="y"/>
+    <includes>
+        <js-include file="Divide.js"/>
+    </includes>
+    <js-constructor>new YAHOO.com.aviarc.toronto.widget.core.action.math.v1_0_0.Divide()</js-constructor>
+</widget>

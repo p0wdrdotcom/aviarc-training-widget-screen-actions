@@ -1,0 +1,13 @@
+<widget name="subtract" 
+		factory-class="com.aviarc.framework.toronto.widget.DefaultWidgetProviderFactoryImpl"
+		action="y">		
+    <attributes>       
+        <attribute name="name" type="name" mandatory="n" /> 
+        <attribute name="minuend" type="string" mandatory="y" /> 
+    </attributes>
+    <children allowed="y"/>
+	<includes>
+        <js-include file="Subtract.js"/>
+    </includes>
+    <js-constructor>new YAHOO.com.aviarc.toronto.widget.core.action.math.v1_0_0.Subtract()</js-constructor>
+</widget>

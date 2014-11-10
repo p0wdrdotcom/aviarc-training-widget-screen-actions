@@ -1,0 +1,11 @@
+<screen title="Quick Loan Calculator" xmlns:action="urn:aviarc:widget:com.aviarc.toronto.widget.core.action">
+        <container position="relative" width="350" height="350" class="light border">
+            <container position="relative" width="80%" margin-left="10%" margin-right="10%" padding-top="20">
+                <container position="relative" height="30" width="100%">
+                    <text-static float="left" text="Quick Loan Calculator" margin-right="10" class="primary huge" />
+                </container>
+                <container position="relative" height="1" width="100%" margin-bottom="20" class="grey" />
+                <loan-affordability position="relative" margin-left="10%" margin-right="10%" width="80%" interest-rate="{$options.interest-rate}" />
+            </container>
+        </container>
+</screen>

@@ -1,0 +1,4 @@
+<workflow>    
+    <create-options-from-request-parameters />        
+    <show-screen name="quick-loan-calculator" />
+</workflow>

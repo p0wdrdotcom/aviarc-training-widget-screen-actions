@@ -1,0 +1,14 @@
+<widget name="calculate-payments"
+        factory-class="com.aviarc.framework.toronto.widget.DefaultWidgetProviderFactoryImpl"
+        action="y">
+    <attributes>
+        <attribute name="years" type="string" mandatory="true"/>
+        <attribute name="interest" type="string" mandatory="true"/>
+        <attribute name="payments-per-year" type="string" mandatory="true"/>
+        <attribute name="principal" type="string" mandatory="true"/>
+    </attributes>
+    <includes>
+        <js-include file="CalculatePayments.js"/>
+    </includes>
+    <js-constructor>new YAHOO.clientSidePmt.CalculatePayments()</js-constructor>
+</widget>

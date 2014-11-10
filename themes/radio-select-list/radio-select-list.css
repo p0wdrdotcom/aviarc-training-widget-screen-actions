@@ -1,0 +1,81 @@
+.$URN$_radio-select-list {
+    /* position: absolute; */
+}
+.$URN$_radio-select-list select {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    -webkit-appearance: none;
+}
+
+/* mandatory */
+.$URN$_radio-select-list .select-list-mandatory {
+    display:none;
+    text-indent:-9999px;
+} 
+.$URN$_radio-list-mandatory select {
+    border-width:2px;
+    border-color:#dc8585;
+}
+
+
+.$URN$_radio-select-list .dotContainer {
+    width:100%;
+    height:100%;
+    margin-left: auto; 
+    margin-right: auto;
+}
+
+.$URN$_radio-select-list .option {
+    position:relative;
+    float:left;
+    cursor:pointer;
+}
+.$URN$_radio-select-list .dot {
+    height:  10px;
+    width: 10px;
+    border-radius: 50%;
+    border:solid 3px #4784a5;
+    background-color:#eee;
+    
+}
+.$URN$_radio-select-list .indicator {
+    margin-left: 2px;
+    margin-top: 2px;
+    height: 6px;
+    width: 6px;
+    display:none;
+    border-radius: 50%;
+    -webkit-box-shadow: 0px 1px 2px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow:    0px 1px 2px rgba(50, 50, 50, 0.75);
+    box-shadow:         0px 1px 2px rgba(50, 50, 50, 0.75);
+}
+
+
+.$URN$_radio-select-list .indicator.selected  {
+    background-color:#688e8b;
+    display:block;
+}
+
+.$URN$_radio-select-list .bar {
+    position:absolute;
+    width: 100%;
+    height: 4px;
+    top:20px;
+    background-color:#7aadc9;
+    -webkit-box-shadow: 0px 1px 3px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow:    0px 1px 3px rgba(50, 50, 50, 0.75);
+    box-shadow:         0px 1px 3px rgba(50, 50, 50, 0.75);
+    
+}
+
+
+/*** ---------------- Custom Classes Begin ---------------------------------------------------------------- ***/
+
+/* "disabled" */
+.$URN$_radio-select-list-disabled select {
+    background:#ddd;
+    border-color:#777;
+}

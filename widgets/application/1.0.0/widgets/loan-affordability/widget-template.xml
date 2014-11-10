@@ -1,0 +1,153 @@
+<container class="{@class}" position="{@position}" width="{@width}" height="{@height}" left="{@left}" right="{@right}" top="{@top}" bottom="{@bottom}" margin="{@margin}" margin-top="{@margin-top}" margin-bottom="{@margin-bottom}" margin-left="{@margin-left}" margin-right="{@margin-right}" padding="{@padding}" padding-top="{@padding-top}" padding-bottom="{@padding-bottom}" padding-left="{@padding-left}" padding-right="{@padding-right}" xmlns:action="urn:aviarc:widget:com.aviarc.toronto.widget.core.action" xmlns:support="urn:aviarc:widget:support" xmlns:math="urn:aviarc:widget:com.aviarc.toronto.widget.core.action.math" xmlns:dataset="urn:aviarc:widget:com.aviarc.toronto.widget.core.action.dataset">
+    <support:datacontext workflow="loan-affordability/initialise">
+        <support:parameters>
+            <support:param name="interest-rate" value="{@interest-rate}"/>
+        </support:parameters>
+        <container position="relative">
+            <text-static height="20" position="relative" margin-left="-10" text="Firstly select a monthly term." margin-top="0" class="primary"/>
+            
+            <container position="relative">
+                <container width="100%" position="relative" class="clear" overflow="hidden" margin-top="-1" height="1" />
+                <container float="left" width="100%" height="30">
+                    <radio-select-list class="rounded" height="30" margin-top="5" width="100%" float="left" id-field="years" display-field="display" dataset="months" selection-field="pmt.years"/>
+                </container>
+                <container width="100%" position="relative" class="clear" overflow="hidden" margin-top="-1" height="1" />
+            </container>
+            
+            <text-static height="20" position="relative" margin-left="-10" text="Then complete a value in either:" margin-top="20" class="primary"/>
+            
+            <text-static height="20" float="left" text="Amount to borrow" margin-top="10" class="primary"/>
+            <container width="100%" position="relative" class="clear" overflow="hidden" margin-top="-1" height="1" />
+        
+            <text-edit name="{@name}-principal-textbox" height="30" width="100%" float="left" field="pmt.principal" show-type="n">
+                <action:when event="onKeyUp">
+                    <action:if>
+                        <action:condition test="equal" value1="{$event-parameters.keycode}" value2="38" /><!-- up arrow -->
+                        <then>
+                            <action:set-field field="working.principal-add-value" value="1000" />
+                            <action:set-field field="working.principal">
+                                <math:add>
+                                    <dataset:get-field field="pmt.principal" />
+                                    <dataset:get-field field="working.principal-add-value" />
+                                </math:add>
+                            </action:set-field>
+                            <action:call-widget-method method="{@name}-principal-textbox.setValue" value1="{$working.principal}"/>
+                        </then>
+                    </action:if>
+                    <action:if>
+                        <action:and>
+                            <action:condition test="equal" value1="{$event-parameters.keycode}" value2="40" /><!-- down arrow -->
+                            <action:condition test="greater" value1="{$pmt.principal}" value2="1000" />
+                        </action:and>
+                        <then>
+                            <action:set-field field="working.principal-substract-value" value="-1000" />
+                            <action:set-field field="working.principal">
+                                <math:add>
+                                    <dataset:get-field field="pmt.principal" />
+                                    <dataset:get-field field="working.principal-substract-value" />
+                                </math:add>
+                            </action:set-field>
+                            <action:call-widget-method method="{@name}-principal-textbox.setValue" value1="{$working.principal}"/>
+                        </then>
+                    </action:if>
+                </action:when>
+            </text-edit>
+            <container width="100%" position="relative" class="clear" overflow="hidden" margin-top="-1" height="1" />
+        </container>
+        
+        <text-static height="20" position="relative" margin-left="-10" text="Or" margin-top="20" class="primary"/>
+        
+        <container position="relative">
+            <text-static height="20" float="left" margin-top="10" text="Monthly repayments" class="primary"/>
+            <container width="100%" position="relative" class="clear" overflow="hidden" margin-top="-1" height="1" />
+            <text-edit name="{@name}-payment-textbox" height="30" width="100%" float="left" field="pmt.payment" show-type="n">
+                <action:when event="onKeyUp">
+                    <action:if>
+                        <action:condition test="equal" value1="{$event-parameters.keycode}" value2="38" /><!-- up arrow -->
+                        <then>
+                            <action:set-field field="working.payment-add-value" value="100" />
+                            <action:set-field field="working.payment">
+                                <math:add>
+                                    <dataset:get-field field="pmt.payment" />
+                                    <dataset:get-field field="working.payment-add-value" />
+                                </math:add>
+                            </action:set-field>
+                            <action:call-widget-method method="{@name}-payment-textbox.setValue" value1="{$working.payment}"/>
+                        </then>
+                    </action:if>
+                    <action:if>
+                        <action:and>
+                            <action:condition test="equal" value1="{$event-parameters.keycode}" value2="40" /><!-- down arrow -->
+                            <action:condition test="greater" value1="{$pmt.payment}" value2="100" />
+                        </action:and>
+                        <then>
+                            <action:set-field field="working.payment-substract-value" value="-100" />
+                            <action:set-field field="working.payment">
+                                <math:add>
+                                    <dataset:get-field field="pmt.payment" />
+                                    <dataset:get-field field="working.payment-substract-value" />
+                                </math:add>
+                            </action:set-field>
+                            <action:call-widget-method method="{@name}-payment-textbox.setValue" value1="{$working.payment}"/>
+                        </then>
+                    </action:if>
+                </action:when>
+            </text-edit>
+            <container width="100%" position="relative" class="clear" overflow="hidden" margin-top="-1" height="1" />
+        </container>
+
+        <action:when>
+            <action:events>
+                <action:dataset-current-row-field-changed-event field="pmt.payment" />
+            </action:events>
+            <action:do>
+                <action:call-widget-method method="{@name}-calculate-principal.run"/>
+            </action:do>
+        </action:when>
+        <action:when>
+            <action:events>
+                <action:dataset-current-row-field-changed-event field="pmt.principal" />
+            </action:events>
+            <action:do>
+                <action:call-widget-method method="{@name}-calculate-payment.run"/>
+            </action:do>
+        </action:when>
+        <action:when><!-- when the year changes call the last calc run -->
+            <action:events>
+                <action:dataset-current-row-field-changed-event field="pmt.years" />
+            </action:events>
+            <action:do>
+                <action:if>
+                    <action:or>
+                        <action:condition test="equal" value1="{$pmt.last-calc-run}" value2="payment" />
+                        <action:condition test="equal" value1="{$pmt.last-calc-run}" value2="principal" />
+                    </action:or>
+                    <then>
+                        <action:call-widget-method method="{@name}-calculate-{$pmt.last-calc-run}.run"/>
+                    </then>
+                </action:if>
+            </action:do>
+        </action:when>
+
+        <action:action name="{@name}-calculate-payment">
+            <action:set-field field="pmt.payment">
+                <calculate-payments 
+                    principal="{$pmt.principal}" 
+                    interest="{$pmt.interest}" 
+                    payments-per-year="{$pmt.payments-per-year}"
+                    years="{$pmt.years}" />
+            </action:set-field>
+            <action:set-field field="pmt.last-calc-run" value="payment" />
+        </action:action>
+        <action:action name="{@name}-calculate-principal">
+            <action:set-field field="pmt.principal">
+                <calculate-principal 
+                    payment="{$pmt.payment}" 
+                    interest="{$pmt.interest}" 
+                    payments-per-year="{$pmt.payments-per-year}"
+                    years="{$pmt.years}" />
+             </action:set-field>
+             <action:set-field field="pmt.last-calc-run" value="principal" />
+        </action:action>
+    </support:datacontext>
+</container>

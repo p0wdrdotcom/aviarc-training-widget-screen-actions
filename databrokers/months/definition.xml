@@ -1,0 +1,5 @@
+<databroker datarules="rules.xml" factory-class="com.aviarc.framework.databroker.datasetfile.DatasetFileDataBrokerFactoryImpl">
+    <populate-operation name="get-months-selection-list">
+          <dataset-result file="get-months-selection-list.xml"/>
+    </populate-operation>
+</databroker>

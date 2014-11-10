@@ -1,0 +1,6 @@
+<widget name="loan-affordability"  container-positioning="y" factory-class="com.aviarc.framework.toronto.widget.DefaultWidgetProviderFactoryImpl">
+    <attributes>
+            <attribute name="interest-rate" mandatory="y" type="string"/>
+    </attributes>
+    <children allowed="n"/>
+</widget>
